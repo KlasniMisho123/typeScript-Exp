@@ -1,9 +1,6 @@
 {
   "scripts": {
-    "devs": "tsc && node app.js",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "devs": "tsc && node app.js"
   },
   "devDependencies": {
     "typescript": "^5.7.2"
