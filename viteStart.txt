@@ -1,0 +1,1 @@
+Terminal --> npm init vite@latest {projectname} -- --template vanilla-ts
