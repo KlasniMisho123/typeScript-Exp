@@ -1,6 +1,12 @@
-const coord: [number, number[]] []= [
-    [2, [-4, 4]],
-    [1, [2, 5]]
-]
+enum Direction {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT"
+}
 
-console.log(coord[0][1][0])
+enum Description {
+    SmallText = "this is some sub text to read"
+}
+
+console.log(Description.SmallText, Direction.Down)
