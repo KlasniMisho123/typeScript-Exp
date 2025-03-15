@@ -1,3 +1,3 @@
 const x: number = 2
 
-console.log(x)
+console.log(x, "sand")
