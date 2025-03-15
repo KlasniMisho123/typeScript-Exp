@@ -1,3 +1,6 @@
 "use strict";
-const x = [2, 4, 6];
-console.log(x, "sand");
+const coord = [
+    [2, [-4, 4]],
+    [1, [2, 5]]
+];
+console.log(coord[0][1][0]);

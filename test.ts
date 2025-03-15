@@ -3,4 +3,4 @@ const coord: [number, number[]] []= [
     [1, [2, 5]]
 ]
 
-console.log(coord[0][1])
+console.log(coord[0][1][0])
