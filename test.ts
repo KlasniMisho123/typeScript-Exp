@@ -1,3 +1,3 @@
-const x: number = 2
+const x: number[] = [2, 4 ,6]
 
 console.log(x, "sand")
