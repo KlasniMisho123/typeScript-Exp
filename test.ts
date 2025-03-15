@@ -1,3 +1,3 @@
-var x: number[] = [2, 4 ,6]
+const coord: [number, string] = [2, "4"]
 
-console.log(x, "sand")
+console.log(coord[0])
