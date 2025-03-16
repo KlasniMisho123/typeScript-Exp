@@ -266,13 +266,26 @@
 // data.addItem(user1)
 // console.log(data.getAllItems())
 
-function getValue<K, V>(Key: K, Value: V, value2: V): V {
-    if(Key) {
-        return Value
-    }
-    return value2
+// function getValue<K, V>(Key: K, Value: V, value2: V): V {
+//     if(Key) {
+//         return Value
+//     }
+//     return value2
+// }
+
+// const data = getValue<string, number>("",2,3)
+
+// console.log(data)
+
+// -------- Type Aliases --------
+
+type Coordinate = [number, number]
+
+function compareCoords(
+    p1: Coordinate, 
+    p2: Coordinate
+): Coordinate {
+    return[p1[0], p2[1]]
 }
 
-const data = getValue<string, number>("",2,3)
-
-console.log(data)
+const coords: Coordinate []= [];
