@@ -1,5 +1,3 @@
-let x: unknown = 1
+const arr = [{name: "tim"}, {name: "joe"}, {name: "jane"}]
 
-const result = (x as number) + 1
-
-console.log(result)
+const el = arr.pop()
