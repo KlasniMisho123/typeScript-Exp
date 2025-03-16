@@ -100,4 +100,23 @@ class Employee extends Person {
     }
 }
 const p1 = new Employee("Misho");
-console.log(p1.setName("DODODO"));
+class Animal {
+    move(duration) {
+        console.log("Moveing Along...");
+        this.makeSound(duration);
+    }
+}
+class Dog extends Animal {
+    makeSound(duration) {
+        console.log("Woof woof");
+    }
+}
+class Trex extends Animal {
+    makeSound(duration) {
+        console.log("Raawwrrr");
+    }
+}
+const dog = new Dog();
+const trex = new Trex();
+trex.move(5);
+// dog.move(10)
