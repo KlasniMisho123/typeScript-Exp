@@ -1,3 +1,5 @@
-const arr = [{name: "tim"}, {name: "joe"}, {name: "jane"}]
+function add (x: number, y: number) {
+    return y + x
+}
 
-const el = arr.pop()
+console.log(add(5,8))

@@ -1,4 +1,5 @@
 "use strict";
-let x = 1;
-const result = x + 1;
-console.log(result);
+function add(x, y) {
+    return y + x;
+}
+console.log(add(5, 8));
