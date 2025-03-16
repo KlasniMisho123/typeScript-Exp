@@ -67,44 +67,71 @@ function getItemLength(nameOrNames: unknown): unknown{
 
 // ------ Interfaces --------
 
-interface Person {
-    name: string;
-    age: number;
-    height?: number;
-    hello?: () => void;
-}
+// interface Person {
+//     name: string;
+//     age: number;
+//     height?: number;
+//     hello?: () => void;
+// }
 
-const person1: Person = {
-    name: "Misho",
-    age: 23,
-    hello: function () {
-        console.log(this.name + " says hi")
-    }
-}
+// const person1: Person = {
+//     name: "Misho",
+//     age: 23,
+//     hello: function () {
+//         console.log(this.name + " says hi")
+//     }
+// }
 
 // person1.hello()
 
-interface Employee extends Person {
-    employeeId: number;
-}
+// interface Employee extends Person {
+//     employeeId: number;
+// }
 
-const worker: Employee = {
-    name: "Nino",
-    age: 23,
-    hello: function () {
-        console.log(this.employeeId + " Requests Access To Enter")
-    },
-    employeeId: 11320288191
-}
+// const worker: Employee = {
+//     name: "Nino",
+//     age: 23,
+//     hello: function () {
+//         console.log(this.employeeId + " Requests Access To Enter")
+//     },
+//     employeeId: 11320288191
+// }
 
 // worker.hello?.()
 
-function getPerson(p: Person): Person {
-    return {
-        name: "Misho",
-        age: 23
-    }
-}
+// function getPerson(p: Person): Person {
+//     return {
+//         name: "Misho",
+//         age: 23
+//     }
+// }
 
 // ------ Classess & Abstract Classess --------
 
+class Person {
+    protected name: string;
+    constructor(name: string) {
+        this.name = name
+    }
+    greet() {
+        console.log("Hello, my name is: " + this.name)
+    };
+    getName() {
+        if(this.name.length < 2) return ""
+        return this.name
+    }
+    setName(name: string) {
+        if(name.length < 5) return 
+        this.name = name
+    }
+}
+
+class Employee extends Person {
+    callMe() {
+        console.log(this.name)
+    }
+}
+
+const p1 = new Employee("Misho")
+
+console.log(p1.setName("DODODO"))

@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 // ------ Functions --------
 function makeName(firstName, lastName, middleName) {
     if (middleName)
@@ -38,25 +37,67 @@ function getItemLength(nameOrNames) {
     }
     return 0;
 }
-const person1 = {
-    name: "Misho",
-    age: 23,
-    hello: function () {
-        console.log(this.name + " says hi");
+// const name5 = getItemLength("empty")
+// const array5 = getItemLength(["sad" , "ness"])
+// console.log("name5: ",name5)
+// console.log("array5: ",array5)
+// ------ Interfaces --------
+// interface Person {
+//     name: string;
+//     age: number;
+//     height?: number;
+//     hello?: () => void;
+// }
+// const person1: Person = {
+//     name: "Misho",
+//     age: 23,
+//     hello: function () {
+//         console.log(this.name + " says hi")
+//     }
+// }
+// person1.hello()
+// interface Employee extends Person {
+//     employeeId: number;
+// }
+// const worker: Employee = {
+//     name: "Nino",
+//     age: 23,
+//     hello: function () {
+//         console.log(this.employeeId + " Requests Access To Enter")
+//     },
+//     employeeId: 11320288191
+// }
+// worker.hello?.()
+// function getPerson(p: Person): Person {
+//     return {
+//         name: "Misho",
+//         age: 23
+//     }
+// }
+// ------ Classess & Abstract Classess --------
+class Person {
+    constructor(name) {
+        this.name = name;
     }
-};
-const worker = {
-    name: "Nino",
-    age: 23,
-    hello: function () {
-        console.log(this.employeeId + " Requests Access To Enter");
-    },
-    employeeId: 11320288191
-};
-(_a = worker.hello) === null || _a === void 0 ? void 0 : _a.call(worker);
-function getPerson(p) {
-    return {
-        name: "Misho",
-        age: 23
-    };
+    greet() {
+        console.log("Hello, my name is: " + this.name);
+    }
+    ;
+    getName() {
+        if (this.name.length < 2)
+            return "";
+        return this.name;
+    }
+    setName(name) {
+        if (name.length < 5)
+            return;
+        this.name = name;
+    }
 }
+class Employee extends Person {
+    callMe() {
+        console.log(this.name);
+    }
+}
+const p1 = new Employee("Misho");
+console.log(p1.setName("DODODO"));
