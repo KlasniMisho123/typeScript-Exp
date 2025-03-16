@@ -48,19 +48,53 @@ function applyFunc(
 
 // ------ Advanced Functions --------
 function getItemLength(name: string): number 
-function getItemLength(names: string[]): number
-function getItemLength(nameOrNames: unknown): number{
+function getItemLength(names: string[]): string
+function getItemLength(nameOrNames: unknown): unknown{
     if (typeof nameOrNames === "string") {
         return nameOrNames.length
     } else if (Array.isArray(nameOrNames)) {
-        return nameOrNames.length
+        return "Hello World"
     }
     return 0
 }
 
-const name5 = getItemLength("empty")
+// const name5 = getItemLength("empty")
 
-const array5 = getItemLength(["sad" , "ness"])
+// const array5 = getItemLength(["sad" , "ness"])
 
-console.log("name5: ",name5)
-console.log("array5: ",array5)
+// console.log("name5: ",name5)
+// console.log("array5: ",array5)
+
+// ------ Interfaces --------
+
+interface Person {
+    name: string;
+    age: number;
+    height?: number;
+    hello: () => void;
+}
+
+const person1: Person = {
+    name: "Misho",
+    age: 23,
+    hello: function () {
+        console.log(this.name + " says hi")
+    }
+}
+
+// person1.hello()
+
+interface Employee extends Person {
+    employeeId: number;
+}
+
+const worker: Employee = {
+    name: "Nino",
+    age: 23,
+    hello: function () {
+        console.log(this.employeeId + " Requests Access To Enter")
+    },
+    employeeId: 11320288191
+}
+
+worker.hello()

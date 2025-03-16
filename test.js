@@ -33,11 +33,23 @@ function getItemLength(nameOrNames) {
         return nameOrNames.length;
     }
     else if (Array.isArray(nameOrNames)) {
-        return nameOrNames.length;
+        return "Hello World";
     }
     return 0;
 }
-const name5 = getItemLength("empty");
-const array5 = getItemLength(["sad", "ness"]);
-console.log("name5: ", name5);
-console.log("array5: ", array5);
+const person1 = {
+    name: "Misho",
+    age: 23,
+    hello: function () {
+        console.log(this.name + " says hi");
+    }
+};
+const worker = {
+    name: "Nino",
+    age: 23,
+    hello: function () {
+        console.log(this.employeeId + " Requests Enter Access");
+    },
+    employeeId: 11320288191
+};
+worker.hello();
