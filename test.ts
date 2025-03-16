@@ -279,13 +279,65 @@
 
 // -------- Type Aliases --------
 
-type Coordinate = [number, number]
+// type Coordinate = [number, number]
 
-function compareCoords(
-    p1: Coordinate, 
-    p2: Coordinate
-): Coordinate {
-    return[p1[0], p2[1]]
-}
+// function compareCoords(
+//     p1: Coordinate, 
+//     p2: Coordinate
+// ): Coordinate {
+//     return[p1[0], p2[1]]
+// }
 
-const coords: Coordinate []= [];
+// const coords: Coordinate [] = [];
+
+// -------- Union & intersection --------
+
+// type stringOrNumber = string | number | boolean
+
+// function acceptVal(val: stringOrNumber) {
+
+// }
+
+// interface BusinessParthner {
+//     name: string
+// }
+
+// interface ContactDetails {
+//     email: string;
+//     phone: string;
+// }
+
+// type BusinessContact = ContactDetails & BusinessParthner
+
+// const contact: BusinessContact = {
+//     name: "Misho",
+//     email: "whocares@gmail.com",
+//     phone: ""
+// }
+
+// console.log(contact)
+
+// interface Individial {
+//     name: string;
+//     birthday: Date;
+// }
+
+// interface Organization {
+//     companyName: string;
+//     workPhone: string;
+// }
+
+// type ContactType = Individial | Organization
+
+// type CompContact = Individial & Organization
+
+// function addContact(contact: ContactType) {
+//     if ("birthday" in contact) {
+//         console.log(contact.name, contact.birthday)
+//     } else {
+//         console.log(contact.companyName, contact.workPhone
+//         )
+//     }
+// }
+
+// -------- Type guards --------
