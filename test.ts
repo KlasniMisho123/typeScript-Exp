@@ -98,3 +98,4 @@ const worker: Employee = {
 }
 
 worker.hello()
+
