@@ -118,5 +118,25 @@ class Trex extends Animal {
 }
 const dog = new Dog();
 const trex = new Trex();
-trex.move(5);
-// dog.move(10)
+class Pteradon {
+    constructor(name, color) {
+        this.name = name;
+        this.color = color;
+    }
+    speak() {
+        console.log(`I am ${this.name} and I'm ${this.color} Colored`);
+    }
+    test() {
+        return 1;
+    }
+}
+class Albatross {
+    speak() {
+        console.log("[Albatrosses Sounds]");
+    }
+}
+const ptera1 = new Pteradon("Lya", "Red");
+const alba1 = new Albatross();
+const bird = alba1;
+ptera1.speak();
+bird.speak();

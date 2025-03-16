@@ -159,5 +159,45 @@ const dog = new Dog()
 
 const trex = new Trex()
 
-trex.move(5)
+// trex.move(5)
 // dog.move(10)
+
+// ------ Classess & Interfaces --------
+
+interface Bird {
+    speak(): void
+}
+
+class Pteradon implements Bird{
+    private name: string;
+    private color: string;
+
+    constructor(name: string, color:string) {
+        this.name = name;
+        this.color = color
+    }
+
+    speak() {
+        console.log(`I am ${this.name} and I'm ${this.color} Colored`)
+    }
+
+    test() {
+        return 1
+    }
+}
+
+
+
+
+class Albatross implements Bird {
+    speak() {
+        console.log("♪♪♪ ...(Albatrosses Sounds)")
+    }
+}
+
+const ptera1: Bird= new Pteradon("Lya", "Red")
+const alba1 = new Albatross()
+const bird: Bird = alba1
+
+ptera1.speak()
+bird.speak()
