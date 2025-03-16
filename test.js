@@ -1,4 +1,5 @@
 "use strict";
+// ------ Functions --------
 function makeName(firstName, lastName, middleName) {
     if (middleName)
         return firstName + " " + middleName + " " + lastName;
@@ -10,7 +11,7 @@ function makeName(firstName, lastName, middleName) {
 function callFunc(func, param1, param2) {
     return func(param1, param2);
 }
-const result = callFunc(makeName, "Misho", "Silagava");
+// const result = callFunc(makeName, "Misho", "Silagava")
 // console.log(result)
 function mul(x, y) {
     return x * y;
@@ -27,4 +28,16 @@ function applyFunc(funcs, values) {
     }
     return results;
 }
-console.log(applyFunc([mul, div], [[1, 2], [4, 5]]));
+function getItemLength(nameOrNames) {
+    if (typeof nameOrNames === "string") {
+        return nameOrNames.length;
+    }
+    else if (Array.isArray(nameOrNames)) {
+        return nameOrNames.length;
+    }
+    return 0;
+}
+const name5 = getItemLength("empty");
+const array5 = getItemLength(["sad", "ness"]);
+console.log("name5: ", name5);
+console.log("array5: ", array5);

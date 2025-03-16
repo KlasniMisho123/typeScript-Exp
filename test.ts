@@ -1,3 +1,4 @@
+// ------ Functions --------
 function makeName(firstName: string, lastName: string, middleName?: string) {
     if (middleName) return firstName + " " + middleName + " " + lastName
     else return firstName + " " + lastName
@@ -15,7 +16,7 @@ function callFunc(
     return func(param1, param2)
 }
 
-const result = callFunc(makeName, "Misho", "Silagava")
+// const result = callFunc(makeName, "Misho", "Silagava")
 
 // console.log(result)
 
@@ -42,4 +43,24 @@ function applyFunc(
     return results;
 }
 
-console.log(applyFunc([mul,div], [[1,2], [4,5]]))
+// console.log(applyFunc([mul,div], [[1,2], [4,5]]))
+
+
+// ------ Advanced Functions --------
+function getItemLength(name: string): number 
+function getItemLength(names: string[]): number
+function getItemLength(nameOrNames: unknown): number{
+    if (typeof nameOrNames === "string") {
+        return nameOrNames.length
+    } else if (Array.isArray(nameOrNames)) {
+        return nameOrNames.length
+    }
+    return 0
+}
+
+const name5 = getItemLength("empty")
+
+const array5 = getItemLength(["sad" , "ness"])
+
+console.log("name5: ",name5)
+console.log("array5: ",array5)
