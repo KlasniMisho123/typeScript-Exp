@@ -1,6 +1,4 @@
 "use strict";
-const coord = [
-    [2, [-4, 4]],
-    [1, [2, 5]]
-];
-console.log(coord[0][1][0]);
+let x = 1;
+const result = x + 1;
+console.log(result);

@@ -1,12 +1,5 @@
-enum Direction {
-    Up = "UP",
-    Down = "DOWN",
-    Left = "LEFT",
-    Right = "RIGHT"
-}
+let x: unknown = 1
 
-enum Description {
-    SmallText = "this is some sub text to read"
-}
+const result = (x as number) + 1
 
-console.log(Description.SmallText, Direction.Down)
+console.log(result)
