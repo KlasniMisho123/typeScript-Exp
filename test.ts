@@ -207,25 +207,62 @@
 
 // ------ Satic Atributes & Methods --------
 
-class Dog {
-    static instanceCount: number = 0;
-    name: string;
+// class Dog {
+//     static instanceCount: number = 0;
+//     name: string;
 
-    constructor(name: string) {
-        Dog.instanceCount++;
-        this.name = name
+//     constructor(name: string) {
+//         Dog.instanceCount++;
+//         this.name = name
+//     }
+
+//     static decreaseCount() {
+//         this.instanceCount--;
+//     }
+// }
+
+// const dog1 = new Dog("Jessy")
+// console.log(Dog.instanceCount)
+
+// const dog2 = new Dog("Spike")
+// console.log(Dog.instanceCount)
+
+// Dog.decreaseCount()
+// console.log(Dog.instanceCount)
+
+// ------ Generics --------
+
+class DataStore<T> {
+    private items: T[] = [];
+    addItem(item: T): void {
+        this.items.push(item)
     }
 
-    static decreaseCount() {
-        this.instanceCount--;
+    getItem(index: number): T {
+        return this.items[index]
+    }
+    removeItem(index: number): void {
+        this.items.splice(index, 1)
+    }
+    getAllItems(): T[] {
+        return this.items
     }
 }
 
-const dog1 = new Dog("Jessy")
-console.log(Dog.instanceCount)
+// const data = new DataStore<string>()
 
-const dog2 = new Dog("Spike")
-console.log(Dog.instanceCount)
+interface User {
+    name: string ;
+    id: number
+}
 
-Dog.decreaseCount()
-console.log(Dog.instanceCount)
+const data = new DataStore<User>()
+
+const user1: User = {
+    name:"misho",
+    id: 62802011
+}
+
+data.addItem(user1)
+console.log(data.getAllItems())
+

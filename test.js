@@ -158,19 +158,45 @@
 // }
 // makeSound(alba1)
 // ------ Satic Atributes & Methods --------
-class Dog {
-    constructor(name) {
-        Dog.instanceCount++;
-        this.name = name;
+// class Dog {
+//     static instanceCount: number = 0;
+//     name: string;
+//     constructor(name: string) {
+//         Dog.instanceCount++;
+//         this.name = name
+//     }
+//     static decreaseCount() {
+//         this.instanceCount--;
+//     }
+// }
+// const dog1 = new Dog("Jessy")
+// console.log(Dog.instanceCount)
+// const dog2 = new Dog("Spike")
+// console.log(Dog.instanceCount)
+// Dog.decreaseCount()
+// console.log(Dog.instanceCount)
+// ------ Generics --------
+class DataStore {
+    constructor() {
+        this.items = [];
     }
-    static decreaseCount() {
-        this.instanceCount--;
+    addItem(item) {
+        this.items.push(item);
+    }
+    getItem(index) {
+        return this.items[index];
+    }
+    removeItem(index) {
+        this.items.splice(index, 1);
+    }
+    getAllItems() {
+        return this.items;
     }
 }
-Dog.instanceCount = 0;
-const dog1 = new Dog("Jessy");
-console.log(Dog.instanceCount);
-const dog2 = new Dog("Spike");
-console.log(Dog.instanceCount);
-Dog.decreaseCount();
-console.log(Dog.instanceCount);
+const data = new DataStore();
+const user1 = {
+    name: "misho",
+    id: 62802011
+};
+data.addItem(user1);
+console.log(data.getAllItems());
