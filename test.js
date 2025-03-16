@@ -1,5 +1,5 @@
 "use strict";
-function add(x, y) {
-    return y + x;
+function makeName(firstName, lastName, middleName) {
 }
-console.log(add(5, 8));
+const fullName = makeName("Misho", "Silagava");
+console.log(fullName);
