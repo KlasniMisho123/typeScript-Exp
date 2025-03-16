@@ -176,27 +176,38 @@
 // Dog.decreaseCount()
 // console.log(Dog.instanceCount)
 // ------ Generics --------
-class DataStore {
-    constructor() {
-        this.items = [];
+// class DataStore<T> {
+//     private items: T[] = [];
+//     addItem(item: T): void {
+//         this.items.push(item)
+//     }
+//     getItem(index: number): T {
+//         return this.items[index]
+//     }
+//     removeItem(index: number): void {
+//         this.items.splice(index, 1)
+//     }
+//     getAllItems(): T[] {
+//         return this.items
+//     }
+// }
+// const data = new DataStore<string>()
+// interface User {
+//     name: string ;
+//     id: number
+// }
+// const data = new DataStore<User>()
+// const user1: User = {
+//     name:"misho",
+//     id: 62802011
+// }
+// data.addItem(user1)
+// console.log(data.getAllItems())
+function getValue(Key, Value, value2) {
+    if (Key) {
+        return Value;
     }
-    addItem(item) {
-        this.items.push(item);
-    }
-    getItem(index) {
-        return this.items[index];
-    }
-    removeItem(index) {
-        this.items.splice(index, 1);
-    }
-    getAllItems() {
-        return this.items;
-    }
+    return value2;
 }
-const data = new DataStore();
-const user1 = {
-    name: "misho",
-    id: 62802011
-};
-data.addItem(user1);
-console.log(data.getAllItems());
+const data = getValue("", 2, 3);
+console.log(data);

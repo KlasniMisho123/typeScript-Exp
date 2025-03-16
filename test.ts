@@ -232,37 +232,47 @@
 
 // ------ Generics --------
 
-class DataStore<T> {
-    private items: T[] = [];
-    addItem(item: T): void {
-        this.items.push(item)
-    }
+// class DataStore<T> {
+//     private items: T[] = [];
+//     addItem(item: T): void {
+//         this.items.push(item)
+//     }
 
-    getItem(index: number): T {
-        return this.items[index]
-    }
-    removeItem(index: number): void {
-        this.items.splice(index, 1)
-    }
-    getAllItems(): T[] {
-        return this.items
-    }
-}
+//     getItem(index: number): T {
+//         return this.items[index]
+//     }
+//     removeItem(index: number): void {
+//         this.items.splice(index, 1)
+//     }
+//     getAllItems(): T[] {
+//         return this.items
+//     }
+// }
 
 // const data = new DataStore<string>()
 
-interface User {
-    name: string ;
-    id: number
+// interface User {
+//     name: string ;
+//     id: number
+// }
+
+// const data = new DataStore<User>()
+
+// const user1: User = {
+//     name:"misho",
+//     id: 62802011
+// }
+
+// data.addItem(user1)
+// console.log(data.getAllItems())
+
+function getValue<K, V>(Key: K, Value: V, value2: V): V {
+    if(Key) {
+        return Value
+    }
+    return value2
 }
 
-const data = new DataStore<User>()
+const data = getValue<string, number>("",2,3)
 
-const user1: User = {
-    name:"misho",
-    id: 62802011
-}
-
-data.addItem(user1)
-console.log(data.getAllItems())
-
+console.log(data)
