@@ -71,7 +71,7 @@ interface Person {
     name: string;
     age: number;
     height?: number;
-    hello: () => void;
+    hello?: () => void;
 }
 
 const person1: Person = {
@@ -97,5 +97,12 @@ const worker: Employee = {
     employeeId: 11320288191
 }
 
-worker.hello()
+worker.hello?.()
+
+function getPerson(p: Person): Person {
+    return {
+        name: "Misho",
+        age: 23
+    }
+}
 
