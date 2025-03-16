@@ -97,7 +97,7 @@ const worker: Employee = {
     employeeId: 11320288191
 }
 
-worker.hello?.()
+// worker.hello?.()
 
 function getPerson(p: Person): Person {
     return {
@@ -105,4 +105,6 @@ function getPerson(p: Person): Person {
         age: 23
     }
 }
+
+// ------ Classess & Abstract Classess --------
 

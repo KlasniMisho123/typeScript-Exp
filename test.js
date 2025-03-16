@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 // ------ Functions --------
 function makeName(firstName, lastName, middleName) {
     if (middleName)
@@ -48,8 +49,14 @@ const worker = {
     name: "Nino",
     age: 23,
     hello: function () {
-        console.log(this.employeeId + " Requests Enter Access");
+        console.log(this.employeeId + " Requests Access To Enter");
     },
     employeeId: 11320288191
 };
-worker.hello();
+(_a = worker.hello) === null || _a === void 0 ? void 0 : _a.call(worker);
+function getPerson(p) {
+    return {
+        name: "Misho",
+        age: 23
+    };
+}
