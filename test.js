@@ -266,17 +266,20 @@
 //     }
 // }
 // console.log(add1("5"))
-class Dog {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-}
-class Cat {
-    constructor(firstName) {
-        this.firstName = firstName;
-    }
-}
+// class Dog {
+//     firstName: string;
+//     lastName: string;
+//     constructor(firstName: string, lastName: string) {
+//         this.firstName = firstName
+//         this.lastName = lastName
+//     }
+// }
+// class Cat {
+//     firstName:string;
+//     constructor(firstName: string) {
+//         this.firstName = firstName
+//     }
+// }
 // function getName(animal: Cat | Dog) {
 //     if( animal instanceof Dog) {
 //         return animal.firstName + " " + animal?.lastName
@@ -284,20 +287,99 @@ class Cat {
 //         return animal.firstName
 //     }   
 // }
-const dog1 = new Dog("Jessie", "Fire");
-const cat1 = new Cat("Faye");
-console.log(getName(dog1));
-function isDog(pet) {
-    return pet.lastName !== undefined;
-}
-function isCat(pet) {
-    return !isDog(pet);
-}
-function getName(animal) {
-    if (isDog(animal)) {
-        return animal.firstName + " " + (animal === null || animal === void 0 ? void 0 : animal.lastName);
-    }
-    else {
-        return animal.firstName;
-    }
-}
+// const dog1 = new Dog("Jessie", "Fire") 
+// const cat1 = new Cat("Faye") 
+// console.log(getName(dog1))
+// function isDog(pet: Dog | Cat): pet is Dog {
+//     return(pet as Dog).lastName !== undefined
+// }
+// function isCat(pet: Dog | Cat): pet is Cat {
+//     return !isDog(pet);
+// }
+// function getName(animal: Cat | Dog) {
+//         if(isDog(animal)) {
+//             return animal.firstName + " " + animal?.lastName
+//         } else {
+//             return animal.firstName
+//         }   
+//     }
+// -------- Discrimental Unions --------
+// type Log = Warning | Info | Success
+// interface Warning {
+//     type: "warning"
+//     msg: string;
+// }
+// interface Info {
+//     type: "info"
+//     text: string;
+// }
+// interface Success {
+//     type: "success"
+//     message: string;
+// }
+// let log: Log;
+// function handleMsg(log: Log) {
+// switch(log.type) {
+//     case "warning":
+//         console.log(log.msg)
+//         break
+//     case "info":
+//         console.log(log.text)
+//         break
+//     case "success":
+//         console.log(log.message)
+//         break
+// }
+// }
+// -------- Utility Types --------
+// 1.partial utility type
+// interface Todo {
+//     title: string;
+//     description: string;
+// }
+// const updateTodo = (todo: Partial<Todo>) => {
+//     todo.description
+// }
+// 2.Readonly utility type
+// interface Todo {
+//     title: string;
+// }
+// const myTodo: Readonly<Todo> = { title: "Learn TypeScript" };
+// myTodo.title = "hello"
+// 3.record utility type
+// interface PageInfo {
+//     title: string;
+// }
+// const pages: Record<string, PageInfo> = {
+//     home: {title: "Home"},
+//     about: {title: "About"},
+//     contact: {title: "Contact"}
+// }
+// const pageNumbers: Record<number, PageInfo> = {
+//     0: {title: "Home"},
+//     1: {title: "About"},
+//     2: {title: "Contact"}
+// }
+// 4.Pick utility type
+// interface Todo {
+//     id: number;
+//     title: string;
+//     completed: boolean;
+// }
+// type TodoPreview = Pick<Todo, "title" | "completed">;
+// const todo: TodoPreview = {
+//     title: "Clean Room",
+//     completed: false,
+// }
+// 5.Omit utility type
+// interface Todo {
+//     id: number;
+//     title: string;
+//     completed: boolean;
+// }
+// type TodoPreview = Omit<Todo, "id">;
+// const todo: TodoPreview = {
+//     title: "Clean Room",
+//     completed: false,
+// }
+// -------- Modules (import/export) --------
