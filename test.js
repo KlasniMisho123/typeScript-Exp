@@ -277,14 +277,13 @@ class Cat {
         this.firstName = firstName;
     }
 }
-function getName(animal) {
-    if (animal instanceof Dog) {
-        return animal.firstName + " " + (animal === null || animal === void 0 ? void 0 : animal.lastName);
-    }
-    else {
-        return animal.firstName;
-    }
-}
+// function getName(animal: Cat | Dog) {
+//     if( animal instanceof Dog) {
+//         return animal.firstName + " " + animal?.lastName
+//     } else {
+//         return animal.firstName
+//     }   
+// }
 const dog1 = new Dog("Jessie", "Fire");
 const cat1 = new Cat("Faye");
 console.log(getName(dog1));
@@ -294,7 +293,11 @@ function isDog(pet) {
 function isCat(pet) {
     return !isDog(pet);
 }
-console.log(isDog(dog1));
-console.log(isDog(cat1));
-console.log(isCat(dog1));
-console.log(isCat(cat1));
+function getName(animal) {
+    if (isDog(animal)) {
+        return animal.firstName + " " + (animal === null || animal === void 0 ? void 0 : animal.lastName);
+    }
+    else {
+        return animal.firstName;
+    }
+}
