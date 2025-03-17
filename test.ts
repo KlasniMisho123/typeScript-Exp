@@ -434,3 +434,50 @@
 //         break
 // }
 // }
+
+// -------- Utility Types --------
+
+
+// 1.partial utility type
+// interface Todo {
+//     title: string;
+//     description: string;
+// }
+// const updateTodo = (todo: Partial<Todo>) => {
+//     todo.description
+// }
+
+// 2.Readonly utility type
+// interface Todo {
+//     title: string;
+// }
+
+// const myTodo: Readonly<Todo> = { title: "Learn TypeScript" };
+// myTodo.title = "hello"
+
+// 3.record utility type
+// interface PageInfo {
+//     title: string;
+// }
+
+// const pages: Record<string, PageInfo> = {
+//     home: {title: "Home"},
+//     about: {title: "About"},
+//     contact: {title: "Contact"}
+// }
+
+// const pageNumbers: Record<number, PageInfo> = {
+//     0: {title: "Home"},
+//     1: {title: "About"},
+//     2: {title: "Contact"}
+// }
+
+// 4.Readonly utility type
+// const updateTodo = (todo: Partial<Todo>) => {
+//     todo.description
+// }
+
+// 5.Readonly utility type
+// const updateTodo = (todo: Partial<Todo>) => {
+//     todo.description
+// }
