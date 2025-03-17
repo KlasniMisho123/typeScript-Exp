@@ -341,3 +341,43 @@
 // }
 
 // -------- Type guards --------
+// type StringOrNumber = string | number;
+
+// function add1(value: StringOrNumber): StringOrNumber {
+//     if(typeof value === "string") {
+//         return value + "1"
+//     } else  {
+//         return value + 1
+//     }
+// }
+
+// console.log(add1("5"))
+
+class Dog {
+    firstName: string;
+    lastName: string;
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+}
+
+class Cat {
+    firstName:string;
+    constructor(firstName: string) {
+        this.firstName = firstName
+    }
+}
+
+function getName(animal: Cat | Dog) {
+    if( animal instanceof Dog) {
+        return animal.firstName + " " + animal?.lastName
+    } else {
+        return animal.firstName
+    }   
+}
+
+const dog1 = new Dog("Jessie", "Fire") 
+const cat1 = new Cat("Faye") 
+
+console.log(getName(dog1))
