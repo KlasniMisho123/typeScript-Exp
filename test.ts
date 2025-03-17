@@ -353,21 +353,21 @@
 
 // console.log(add1("5"))
 
-class Dog {
-    firstName: string;
-    lastName: string;
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName
-        this.lastName = lastName
-    }
-}
+// class Dog {
+//     firstName: string;
+//     lastName: string;
+//     constructor(firstName: string, lastName: string) {
+//         this.firstName = firstName
+//         this.lastName = lastName
+//     }
+// }
 
-class Cat {
-    firstName:string;
-    constructor(firstName: string) {
-        this.firstName = firstName
-    }
-}
+// class Cat {
+//     firstName:string;
+//     constructor(firstName: string) {
+//         this.firstName = firstName
+//     }
+// }
 
 // function getName(animal: Cat | Dog) {
 //     if( animal instanceof Dog) {
@@ -377,23 +377,60 @@ class Cat {
 //     }   
 // }
 
-const dog1 = new Dog("Jessie", "Fire") 
-const cat1 = new Cat("Faye") 
+// const dog1 = new Dog("Jessie", "Fire") 
+// const cat1 = new Cat("Faye") 
 
-console.log(getName(dog1))
+// console.log(getName(dog1))
 
-function isDog(pet: Dog | Cat): pet is Dog {
-    return(pet as Dog).lastName !== undefined
-}
+// function isDog(pet: Dog | Cat): pet is Dog {
+//     return(pet as Dog).lastName !== undefined
+// }
 
-function isCat(pet: Dog | Cat): pet is Cat {
-    return !isDog(pet);
-}
+// function isCat(pet: Dog | Cat): pet is Cat {
+//     return !isDog(pet);
+// }
 
-function getName(animal: Cat | Dog) {
-        if(isDog(animal)) {
-            return animal.firstName + " " + animal?.lastName
-        } else {
-            return animal.firstName
-        }   
-    }
+// function getName(animal: Cat | Dog) {
+//         if(isDog(animal)) {
+//             return animal.firstName + " " + animal?.lastName
+//         } else {
+//             return animal.firstName
+//         }   
+//     }
+
+// -------- Discrimental Unions --------
+
+// type Log = Warning | Info | Success
+
+// interface Warning {
+//     type: "warning"
+//     msg: string;
+// }
+
+// interface Info {
+//     type: "info"
+//     text: string;
+// }
+
+// interface Success {
+//     type: "success"
+//     message: string;
+// }
+
+// let log: Log;
+
+// function handleMsg(log: Log) {
+// switch(log.type) {
+//     case "warning":
+//         console.log(log.msg)
+//         break
+
+//     case "info":
+//         console.log(log.text)
+//         break
+
+//     case "success":
+//         console.log(log.message)
+//         break
+// }
+// }
