@@ -287,4 +287,14 @@ function getName(animal) {
 }
 const dog1 = new Dog("Jessie", "Fire");
 const cat1 = new Cat("Faye");
-console.log(getName(cat1));
+console.log(getName(dog1));
+function isDog(pet) {
+    return pet.lastName !== undefined;
+}
+function isCat(pet) {
+    return !isDog(pet);
+}
+console.log(isDog(dog1));
+console.log(isDog(cat1));
+console.log(isCat(dog1));
+console.log(isCat(cat1));

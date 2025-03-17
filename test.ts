@@ -381,3 +381,11 @@ const dog1 = new Dog("Jessie", "Fire")
 const cat1 = new Cat("Faye") 
 
 console.log(getName(dog1))
+
+function isDog(pet: Dog | Cat): pet is Dog {
+    return(pet as Dog).lastName !== undefined
+}
+
+function isCat(pet: Dog | Cat): pet is Cat {
+    return !isDog(pet);
+}
