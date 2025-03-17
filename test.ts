@@ -473,20 +473,29 @@
 // }
 
 // 4.Pick utility type
-interface Todo {
-    id: number;
-    title: string;
-    completed: boolean;
-}
+// interface Todo {
+//     id: number;
+//     title: string;
+//     completed: boolean;
+// }
 
-type TodoPreview = Pick<Todo, "title" | "completed">;
+// type TodoPreview = Pick<Todo, "title" | "completed">;
 
-const todo: TodoPreview = {
-    title: "Clean Room",
-    completed: false,
-}
+// const todo: TodoPreview = {
+//     title: "Clean Room",
+//     completed: false,
+// }
 
-// 5.Readonly utility type
-// const updateTodo = (todo: Partial<Todo>) => {
-//     todo.description
+// 5.Omit utility type
+// interface Todo {
+//     id: number;
+//     title: string;
+//     completed: boolean;
+// }
+
+// type TodoPreview = Omit<Todo, "id">;
+
+// const todo: TodoPreview = {
+//     title: "Clean Room",
+//     completed: false,
 // }
