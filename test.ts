@@ -472,10 +472,19 @@
 //     2: {title: "Contact"}
 // }
 
-// 4.Readonly utility type
-// const updateTodo = (todo: Partial<Todo>) => {
-//     todo.description
-// }
+// 4.Pick utility type
+interface Todo {
+    id: number;
+    title: string;
+    completed: boolean;
+}
+
+type TodoPreview = Pick<Todo, "title" | "completed">;
+
+const todo: TodoPreview = {
+    title: "Clean Room",
+    completed: false,
+}
 
 // 5.Readonly utility type
 // const updateTodo = (todo: Partial<Todo>) => {
