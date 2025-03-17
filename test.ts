@@ -369,13 +369,13 @@ class Cat {
     }
 }
 
-function getName(animal: Cat | Dog) {
-    if( animal instanceof Dog) {
-        return animal.firstName + " " + animal?.lastName
-    } else {
-        return animal.firstName
-    }   
-}
+// function getName(animal: Cat | Dog) {
+//     if( animal instanceof Dog) {
+//         return animal.firstName + " " + animal?.lastName
+//     } else {
+//         return animal.firstName
+//     }   
+// }
 
 const dog1 = new Dog("Jessie", "Fire") 
 const cat1 = new Cat("Faye") 
@@ -389,3 +389,11 @@ function isDog(pet: Dog | Cat): pet is Dog {
 function isCat(pet: Dog | Cat): pet is Cat {
     return !isDog(pet);
 }
+
+function getName(animal: Cat | Dog) {
+        if(isDog(animal)) {
+            return animal.firstName + " " + animal?.lastName
+        } else {
+            return animal.firstName
+        }   
+    }
